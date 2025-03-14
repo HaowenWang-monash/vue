@@ -1,47 +1,50 @@
 <template>
-    <nav class="navbar">
-      <div class="logo">🌞 SunWise</div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">UV Index</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-      <input type="text" placeholder="Search in site 🔍" class="search-bar" />
-    </nav>
-  </template>
-  
-  <style scoped>
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 15px 30px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  .search-bar {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  </style>
+  <nav class="navbar">
+    <div class="logo">🌞 SunWise</div>
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/check-uv">Check UV</router-link></li>
+      <li><router-link to="/info">UV Information</router-link></li>
+      <li><router-link to="/tips">Tips & Tricks</router-link></li>
+      <li><router-link to="/planner">Sun Safety Planner</router-link></li>
+      <li><router-link to="/shop">Shop</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+    </ul>
+  </nav>
+</template>
+
+<style scoped>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar ul li a:hover {
+  color: #007bff;
+}
+</style>
+
   
