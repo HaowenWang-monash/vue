@@ -1,6 +1,6 @@
 import pandas as pd
-import mysql.connector
-import app
+import mysql.connector # py  -m pip install mysql-connector-python
+from app import get_db_connection
 from sqlalchemy import create_engine
 
 # File path (modify as needed)
@@ -18,7 +18,7 @@ df_filtered = df_filtered.reset_index(drop=True)
 print(df_filtered.head())
 print(df_filtered.shape)
 
-df2_filtered = df2[["suburb", "state", "statename", "lat", "lng"]]
+df2_filtered = df2[["suburb", "state", "state_name", "lat", "lng"]]
 df2_filtered = df2_filtered.reset_index(drop=True)
 print(df2_filtered.head())
 print(df2_filtered.shape)
@@ -27,8 +27,8 @@ host="localhost"
 user="root"
 password = "FIT5120TP14"
 database="SunscreenTracker"
-table_name = "Australia_cities"
-table_name2 = "Australia_suburbs"
+table_name = "Australia_cities" #table 1
+table_name2 = "Australia_suburbs" #table 2
 create_location_table_query= f"""
 CREATE TABLE IF NOT EXISTS {table_name} (
     LocationID INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Unique identifier for each location',
