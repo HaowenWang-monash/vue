@@ -1,23 +1,23 @@
 <template>
   <div>
-    <!-- 导航栏 -->
+
     <NavBar />
 
-    <!-- 标题 -->
+ 
     <div class="hero-section">
       <h1>View UV Index Levels for Different Locations</h1>
     </div>
 
-    <!-- UV Index 搜索框 -->
+ 
     <SearchUV @search="fetchUVIndex" />
 
-    <!-- UV 指数信息 -->
+
     <UVIndex :uvData="uvData" />
 
-    <!-- 防晒建议 -->
+
     <SunProtection />
 
-    <!-- 推荐产品 -->
+
     <RecommendedProducts />
   </div>
 </template>
