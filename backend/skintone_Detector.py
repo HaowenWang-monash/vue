@@ -6,6 +6,7 @@ from PIL import Image
 
 
 #CNN model
+#Do not change
 class CNN(nn.Module):
     def __init__(self):
         super(CNN, self).__init__()
@@ -26,15 +27,17 @@ class CNN(nn.Module):
         return x
 
 # Model Initialization
+#Do not change
 model = CNN()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 # Load the saved model
-
+#Do not change
 model.load_state_dict(torch.load("human_classifier.pth"))
 model.eval()
 
 # Transform the data for the model
+#Do not change
 transform = transforms.Compose([
     transforms.Resize((128, 128)),
     transforms.ToTensor(),
@@ -42,8 +45,9 @@ transform = transforms.Compose([
 ])
 
 #open image
-image_path = "face2.jpg"
+image_path = "face2.jpg" #change image link
 
+#Do not change
 image = Image.open(image_path)
 
 image = transform(image).unsqueeze(0)
@@ -53,13 +57,14 @@ with torch.no_grad():
     prediction = (output.item() < 0.5)
 
 if prediction:
-    print("The image contains a human face.")
+    print("The image contains a human face.") #change this
 else:
-    print("The image does not contain a human face.")
+    print("The image does not contain a human face.") #change this
+
 
 if prediction:
-
     #CNN initals
+    #Do not change
     class CNN(nn.Module):
         def __init__(self):
             super(CNN, self).__init__()
@@ -82,6 +87,7 @@ if prediction:
 
 
     # Model Initialization
+    #Do not change
     model = CNN()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -107,4 +113,4 @@ if prediction:
 
     # Map class index to label
     class_names = ["dark", "light", "mid-dark", "mid-light"]
-    print(f"Predicted Skin Tone: {class_names[predicted_class]}")
+    print(f"Predicted Skin Tone: {class_names[predicted_class]}")#Change this
