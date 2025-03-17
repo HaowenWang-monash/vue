@@ -185,7 +185,7 @@ def messages():
 import os
 
 
-file_path = os.path.join(os.path.dirname(__file__), "melanoma_data.csv")
+file_path = "D:/vue/backend/melanoma_data.csv"
 
 
 if not os.path.exists(file_path):
@@ -240,5 +240,5 @@ def update_graph(selected_state):
 
 # Run the Flask app
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Render 使用 8080 端口
+    port = int(os.environ.get("PORT", 8080))  # Render 使用 8080 端口
     app.run(host="0.0.0.0", port=port)
