@@ -62,7 +62,7 @@
         this.errorMessage = "";
   
         try {
-          const response = await fetch("http://localhost:5000/api/messages", {
+          const response = await fetch("https://1a13-125-253-110-93.ngrok-free.app/api/messages", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

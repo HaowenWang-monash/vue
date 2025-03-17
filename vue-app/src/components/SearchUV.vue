@@ -103,33 +103,35 @@ export default {
   },
 
   methods: {
-    async getUVIndex() {
-      if (!this.location.trim()) {
-        alert("Please enter a location");
-        return;
-      }
+  async getUVIndex() {
+    if (!this.location.trim()) {
+      alert("Please enter a location");
+      return;
+    }
 
-      try {
-        console.log("Fetching UV data for:", this.location); 
-        const response = await fetch(
-          `http://localhost:5000/api/uv?location=${this.location}`
-        );
+    try {
+      console.log("Fetching UV data for:", this.location);
+      const response = await fetch(
+        `https://1a13-125-253-110-93.ngrok-free.app/api/uv?location=${this.location}`
+      );
 
-        if (!response.ok) throw new Error("Failed to fetch UV index");
+      if (!response.ok) throw new Error("Failed to fetch UV index");
 
-        const data = await response.json();
-        console.log("Fetched data:", data); 
+      const data = await response.json();
+      console.log("Fetched data:", data);
 
-        this.uvData = data;
-        this.uvDataFetched = true; 
-      } catch (error) {
-        console.error("Error fetching UV index:", error);
-        alert("Error fetching data. Please try again.");
-      }
-    },
+      this.uvData = data;
+      this.uvDataFetched = true;
+    } catch (error) {
+      console.error("Error fetching UV index:", error);
+      alert("Error fetching data. Please try again.");
+    }
   },
+},
+
 };
 </script>
+
 
 <style scoped>
 
