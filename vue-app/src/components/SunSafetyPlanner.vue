@@ -62,7 +62,7 @@
 <h3>A quick visualization of skin cancer rates according to each state in Australia</h3>
 
 <div style="margin-top: 3%;">
-    <iframe src="https://1a13-125-253-110-93.ngrok-free.app/dash/" style="width: 100%; height: 600px; border: none;"></iframe>
+    <iframe src="https://vue-fx7m.onrender.com/dash/" style="width: 100%; height: 600px; border: none;"></iframe>
 </div>
 
 </div>
