@@ -35,6 +35,23 @@
     </div>
 </div>
 
+<div class="header" style="margin-top: 0%;">
+    <h1>Skin Cancer rates in Australia</h1>
+    <h3>A quick visualisation of skin cancer rates according to each state in Australia</h3>
+
+    <div style="margin-top: 3%;">
+        <iframe src="http://127.0.0.1:8050/" style="width: 800px; height: 600px;"></iframe>
+    </div>
+</div>
+<div class="header" style="margin-top: 0%;">
+    <h1>Skin Cancer rates in Australia</h1>
+    <h3>A quick visualisation of skin cancer rates according to each state in Australia</h3>
+
+    <div style="margin-top: 3%;">
+        <img src="/datagraph.png" class="img-fluid" alt="Vitamin D importance" style="width: 700px; height: 400px;"/>
+    </div>
+</div>
+
 <div class="header">
     <h1>Understanding the U.V Index</h1>
     <h3>A guide to interpreting UV Index levels and their effects on health</h3>

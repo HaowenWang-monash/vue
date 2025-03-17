@@ -4,7 +4,7 @@
     <NavBar />
 
  
-    <div class="hero-section">
+    <!-- <div class="hero-section">
       <h1>View UV Index Levels for Different Locations</h1>
     </div>
 
@@ -18,7 +18,10 @@
     <SunProtection />
 
 
-    <RecommendedProducts />
+    <RecommendedProducts /> -->
+
+    <!-- <SunSafetyPlanner></SunSafetyPlanner> -->
+    <GeneralInfo></GeneralInfo>
   </div>
 </template>
 
@@ -28,6 +31,9 @@ import SearchUV from "./components/SearchUV.vue";
 import UVIndex from "./components/UVIndex.vue";
 import SunProtection from "./components/SunProtection.vue";
 import RecommendedProducts from "./components/RecommendedProducts.vue";
+import GeneralInfo from "./views/GeneralInfo.vue";
+import Shop from "./views/Shop.vue";
+import SunSafetyPlanner from "./views/SunSafetyPlanner.vue";
 
 export default {
   components: {
@@ -36,6 +42,9 @@ export default {
     UVIndex,
     SunProtection,
     RecommendedProducts,
+    GeneralInfo,
+    Shop,
+    SunSafetyPlanner
   },
   data() {
     return {

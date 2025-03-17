@@ -37,7 +37,21 @@
         </div>
     </div>
 
-    <div style="display: flex; align-items: right; justify-content: right; margin-top: 3%;">
+    <div style="margin-top: 15%;">
+        <input type="file" name="image" accept="image/jpeg,image/x-png,image/gif" @change="uploadFile">
+        <button @click="submitImg" style="background-color: black; color: white; width:120px; height: 50px;">Analyse skin tone</button>
+        <div v-if="analysedSkinTone">
+            <h2>Your skin tone is {{ analysedSkinTone }}</h2>
+        </div>
+        <div>
+            <h2>Skin tone types:</h2>
+            <p>LIGHT = Type I</p>
+            <p>MID-LIGHT = Type II and III</p>
+            <p>MID-DARK = Type IV and V</p>
+            <p>DARK= Type VI</p>
+        </div>
+    </div>
+    <div style="display: flex; align-items: right; justify-content: right;">
         <form @submit.prevent="submitDetails">
             <div style="margin-right: 21%; margin-bottom: 1%;">
                 <label for="skinType" class="form-label">Skin Type</label>
@@ -69,7 +83,6 @@
         <h2 style="color: gray;">Based on current U.V index</h2>
         <div class="answer-form">
             <h1>SPF 50+</h1> 
-            <!-- NEED TO CHANGE THIS SO WE'RE USING UV INDEX-->
         </div>
     </div>
 
@@ -78,14 +91,6 @@
         <h2 style="color: gray;">Curated for your skin tone in order to maintain optimal vitamin D levels</h2>
         <div class="answer-form">
             <h1 v-if="submittedType">{{ skinTypeTime[submittedType] }}</h1>
-        </div>
-    </div>
-
-    <div>
-        <h2 style="font-size: 30px;">Further Resources and Guides</h2>
-        <h2 style="color: gray;">Sun protection specific to your skin tone</h2>
-        <div class="answer-form">
-            
         </div>
     </div>
 
@@ -139,6 +144,9 @@
 <script setup>
 import { ref } from 'vue';
 
+const uploadedFile = ref(null);
+const analysedSkinTone = ref(null);
+
 const userData = ref({
     skinType:'',
 
@@ -168,13 +176,22 @@ const errorInput = ref({
     skinType: null
 });
 
-const skinTypeTime = { //NEED TO GET DATA FROM PY FILE INSTEAD OF HARDCODING
+const skinTypeTime = { 
     "I": "10-15m",
     "II": "15-20m",
     "III": "20-30m",
     "IV": "30-40m",
     "V": "40-60m",
     "VI": "60-80m"
+}
+
+const uploadFile = (fileuploaded) => {
+    uploadedFile.value = fileuploaded.target.files[0];
+}
+
+const submitImg = async() => {
+    const formData = new FormData();
+    formData.append("image", uploadFile.value);
 }
 
 

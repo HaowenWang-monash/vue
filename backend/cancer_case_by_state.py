@@ -7,13 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1x6vLo-5-O2zjucMvBkwbVj2pBSWRUHyR
 """
 
-from google.colab import drive
-
-# Mount Google Drive
-drive.mount('/content/drive')
-
-!pip install dash
-
 
 
 import pandas as pd
@@ -21,9 +14,14 @@ import plotly.express as px
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
+from flask import Flask
+
+server = Flask(__name__)
+
+app = dash.Dash(__name__, server=server, routes_pathname_prefix="/dash/")
 
 # Load melanoma_data.csv
-file_path = "/content/drive/My Drive/melanoma_data.csv"  # Update if needed
+file_path = "melanoma_data.csv"  # Update if needed
 melanoma_df = pd.read_csv(file_path)
 
 # Ensure correct data types
@@ -55,11 +53,18 @@ app.layout = html.Div([
     Input("state-dropdown", "value")
 )
 def update_graph(selected_state):
-    filtered_df = melanoma_df[melanoma_df["State_Territory"] == selected_state]
+    # Filter by state
+    filtered_df = melanoma_df[(melanoma_df["State_Territory"] == selected_state)]
+ 
+    # Remove the "Persons" category (only show Males & Females)
+    filtered_df = filtered_df[filtered_df["Sex"] != "Persons"]
+ 
+    # Create the bar chart
     fig = px.bar(
         filtered_df, x="Year", y="Count", color="Sex",
         title=f"Melanoma Cancer Cases in {selected_state}",
-        labels={"Count": "Number of Cases", "Year": "Year"}
+        labels={"Count": "Number of Cases", "Year": "Year"},
+        barmode="group"  # Change to grouped bars instead of stacked
     )
     return fig
 
