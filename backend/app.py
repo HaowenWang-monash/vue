@@ -242,8 +242,8 @@ def update_graph(selected_state):
     )
     return fig
 
-# Run the Flask app
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # 确保 PORT 绑定
-    app.run(host="0.0.0.0", port=port)  # 这里需要确保缩进正确
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=False)  # 关闭 Debug 模式
+
 
