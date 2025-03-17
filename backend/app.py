@@ -182,10 +182,11 @@ def messages():
             return jsonify({"error": str(e)}), 500
 
 # **Dash Integration: Melanoma Data Visualization**
-import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-file_path = os.path.abspath("backend/melanoma_data.csv")
+file_path = os.path.join(BASE_DIR, "melanoma_data.csv")
 
 
 
