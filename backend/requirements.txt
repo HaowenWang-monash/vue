@@ -2,4 +2,4 @@ flask
 gunicorn
 mysql-connector-python  # 如果你用 MySQL
 pandas  # 如果你要处理 CSV
-requests  # 如果你的代码用到了 API 调用
+requests 
