@@ -185,7 +185,8 @@ def messages():
 import os
 
 
-file_path = "D:/vue/backend/melanoma_data.csv"
+file_path = os.path.join(os.path.dirname(__file__), "backend", "melanoma_data.csv")
+
 
 
 if not os.path.exists(file_path):
