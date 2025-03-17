@@ -244,5 +244,6 @@ def update_graph(selected_state):
 
 # Run the Flask app
 if __name__ == "__main__":
-     port = int(os.environ.get("PORT", 10000))  # Render 使用 8080 端口
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 10000))  # 确保 PORT 绑定
+    app.run(host="0.0.0.0", port=port)  # 这里需要确保缩进正确
+
