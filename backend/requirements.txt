@@ -1,7 +1,38 @@
+# Flask 相关
 flask
-gunicorn
-mysql-connector-python  # 如果你用 MySQL
-pandas  # 如果你要处理 CSV
 flask_cors
+gunicorn
+
+# 数据库相关
+mysql-connector-python
+pandas
+
+# API 请求
+requests
+
+# 时间处理
+python-dateutil
+pytz
+tzdata
+
+# 可视化
 plotly
-requests 
+dash
+dash-core-components
+dash-html-components
+dash-bootstrap-components
+
+# 其他依赖
+numpy
+Werkzeug
+Jinja2
+itsdangerous
+click
+blinker
+certifi
+charset-normalizer
+idna
+urllib3
+packaging
+six
+MarkupSafe
