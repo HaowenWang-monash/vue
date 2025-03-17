@@ -12,7 +12,8 @@ from dash.dependencies import Input, Output
 
 # Create Flask app
 app = Flask(__name__, static_folder="dist", static_url_path="")
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
 
 # OpenUV API setup
 OPENUV_API_KEY = "openuv-7jgrm81b6v9n-io"
