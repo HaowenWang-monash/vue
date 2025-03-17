@@ -232,4 +232,5 @@ def update_graph(selected_state):
 
 # Run the Flask app
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=False)
+    port = int(os.environ.get("PORT", 10000))  # Render 需要动态端口
+    app.run(host="0.0.0.0", port=port)
