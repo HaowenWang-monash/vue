@@ -3,4 +3,5 @@ gunicorn
 mysql-connector-python  # 如果你用 MySQL
 pandas  # 如果你要处理 CSV
 flask_cors
+plotly
 requests 
