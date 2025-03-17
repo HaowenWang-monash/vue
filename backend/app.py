@@ -181,7 +181,14 @@ def messages():
             return jsonify({"error": str(e)}), 500
 
 # **Dash Integration: Melanoma Data Visualization**
-file_path = "D:/vue/backend/melanoma_data.csv"
+import os
+
+
+file_path = os.path.join(os.path.dirname(__file__), "melanoma_data.csv")
+
+
+if not os.path.exists(file_path):
+    raise FileNotFoundError(f"Error: File {file_path} not found, please check the path!")
 
 # Check if file exists
 if not os.path.exists(file_path):
