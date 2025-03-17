@@ -185,7 +185,8 @@ def messages():
 import os
 
 
-file_path = os.path.join(os.path.dirname(__file__), "melanoma_data.csv")
+file_path = os.path.abspath("backend/melanoma_data.csv")
+
 
 
 
