@@ -69,7 +69,7 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))
 ])
 
-image_path = "face2.jpg"
+image_path = "face.jpeg"
 def analyse_skin(image_path):
     #open image
      #change image link

@@ -9,16 +9,17 @@ import plotly.express as px
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
+import datetime
 
 # Create Flask app
 app = Flask(__name__, static_folder="dist", static_url_path="")
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
-# OpenUV API setup
-OPENUV_API_KEY = "openuv-7jgrm81b6v9n-io"
-OPENUV_URL = "https://api.openuv.io/api/v1/uv"
-HEADERS = {"x-access-token": OPENUV_API_KEY}
+#  API setup
+API_KEY = "a67ef333a4a9efe69d5555e80a7efb9a"
+
+
 
 # Serve Vue.js frontend
 @app.route("/")
@@ -65,18 +66,28 @@ def get_location_lat_long(location):
 
 # Fetch UV index from OpenUV API
 def get_uv_from_api(lat, lng):
-    params = {"lat": lat, "lng": lng}
-    response = requests.get(OPENUV_URL, params=params, headers=HEADERS)
-
-    print("🔍 OpenUV API Response:", response.json())  
+    url = f"http://api.openweathermap.org/data/2.5/uvi?lat={lat}&lon={lng}&appid={API_KEY}"
+    response = requests.get(url)
+    print("🔍 OpenUV API Response:", response.json())
 
     if response.status_code == 200:
         data = response.json()
+        uv_index = data.get("value", 0)
+        iso_date = data.get("date_iso", "N/A")
+
+        if iso_date != "N/A":
+            dt = datetime.fromisoformat(iso_date)
+            formatted_date = dt.strftime("%d-%m-%Y")  # Day-Month-Year format
+            formatted_time = dt.strftime("%H:%M:%S")  # Hour:Minute:Second format
+        else:
+            formatted_date, formatted_time = "N/A", "N/A"
+
         return {
-            "uv_index": data.get("result", {}).get("uv", 0),
-            "safe_exposure_time": data.get("result", {}).get("safe_exposure_time", {}),
-            "date": data.get("result", {}).get("uv_time", "N/A"),
+            "uv_index": uv_index,
+            "date": formatted_date,
+            "time": formatted_time
         }
+
     return None
 
 # API to get coordinates

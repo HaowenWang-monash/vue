@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ed1b9bcd-ed42-4594-9721-002ac721ef1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/face.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/face.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/face2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/skintone_Detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/skintone_Detector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
