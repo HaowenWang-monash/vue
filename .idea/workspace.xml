@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed1b9bcd-ed42-4594-9721-002ac721ef1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/skintone_Detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Get_UV_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Get_UV_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/skintone_Detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/skintone_Detector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -31,18 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Get_UV_index.executor": "Run",
-    "Python.Location_lat_long.executor": "Run",
-    "Python.skintone_Detector.executor": "Run",
-    "Python.vitamin_D_intake.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Ryan",
-    "last_opened_file_path": "C:/Users/ryant/Documents/GitHub/vue"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Get_UV_index.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Location_lat_long.executor&quot;: &quot;Run&quot;,
+    &quot;Python.skintone_Detector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.vitamin_D_intake.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ryan&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ryant/Documents/GitHub/vue&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
