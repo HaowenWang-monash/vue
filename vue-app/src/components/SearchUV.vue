@@ -112,7 +112,7 @@ export default {
     try {
       console.log("Fetching UV data for:", this.location);
       const response = await fetch(
-        `https://1a13-125-253-110-93.ngrok-free.app/api/uv?location=${this.location}`
+        `https://vue-fx7m.onrender.com/api/uv?location=${this.location}`
       );
 
       if (!response.ok) throw new Error("Failed to fetch UV index");

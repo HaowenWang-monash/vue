@@ -57,6 +57,15 @@
           </div>
         </div>
       </div>
+      <div class="header" style="margin-top: 0%;">
+        <h1>Skin Cancer Rates in Australia</h1>
+<h3>A quick visualization of skin cancer rates according to each state in Australia</h3>
+
+<div style="margin-top: 3%;">
+    <iframe src="https://vue-fx7m.onrender.com/dash/" style="width: 100%; height: 600px; border: none;"></iframe>
+</div>
+
+</div>
     </div>
   </template>
   
